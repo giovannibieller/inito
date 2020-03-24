@@ -15,6 +15,24 @@ Init React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel,
     -   remove git init
     -   init new git project
 
+### CREATE NEW COMPONENT
+
+-   `npm run generate:component`
+-   it will ask the component name
+-   it will create a component under the `src/components` folder
+-   components are composed by:
+    -   COMPONENT_NAME.js
+    -   COMPONENT_NAME.styles.js
+
+### CREATE NEW PAGE
+
+-   `npm run generate:page`
+-   it will ask the page name
+-   it will create a page under the `src/pages` folder
+-   components are composed by:
+    -   PAGE_NAME.js
+    -   PAGE_NAME.styles.js
+
 ### DEV
 
 -   cd path/to/app
