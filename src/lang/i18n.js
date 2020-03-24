@@ -2,7 +2,9 @@ import i18n from 'i18next';
 import Backend from 'i18next-xhr-backend';
 import { initReactI18next } from 'react-i18next';
 
-const fallbackLng = 'en';
+import Languages from './languages';
+
+const fallbackLng = Languages[0];
 const defaultLanguage = localStorage.chosenLanguage ? localStorage.chosenLanguage : fallbackLng;
 const translationsPath = '/assets/i18n/{{ns}}/{{lng}}.json';
 
