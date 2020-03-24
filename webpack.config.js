@@ -70,7 +70,8 @@ const aliases = {
 		'@routes': path.resolve(__dirname, 'src/routes/'),
 		'@layouts': path.resolve(__dirname, 'src/layouts/'),
 		'@utils': path.resolve(__dirname, 'src/utils/'),
-		'@styles': path.resolve(__dirname, 'src/styles/')
+		'@styles': path.resolve(__dirname, 'src/styles/'),
+		'@lang': path.resolve(__dirname, 'src/lang/')
 	}
 };
 

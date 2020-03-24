@@ -1,10 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import routes from '@routes/routes.config.js';
+import Languages from '@lang/languages.js';
 import Styles from './Header.styles.js';
 
 const Header = () => {
+	const { t, i18n } = useTranslation();
 	const { classes } = Styles;
 
 	const renderLinks = () => {
@@ -17,18 +20,47 @@ const Header = () => {
 						to={route.path}
 						exact={true}
 						activeStyle={{
-							textDecoration: 'none',
-							fontWeight: 'bold'
+							textDecoration: 'underline'
 						}}
 						className={classes.link}
 					>
-						{route.name}
+						{t(route.name)}
 					</NavLink>
 				);
 			});
 	};
 
-	return <header className={classes.container}>{renderLinks()}</header>;
+	const changeLang = lang => {
+		i18n.changeLanguage(lang);
+		localStorage.chosenLanguage = lang;
+	};
+
+	const renderLangSwitcher = () => {
+		return Languages.map(el => {
+			const langClasses =
+				i18n.language === el ? `${classes.link} ${classes.linkActive}` : classes.link;
+			return (
+				<a
+					key={el}
+					href="#"
+					className={langClasses}
+					onClick={e => {
+						e.preventDefault();
+						changeLang(el);
+					}}
+				>
+					{t(`lang.${el}`)}
+				</a>
+			);
+		});
+	};
+
+	return (
+		<header className={classes.container}>
+			<div>{renderLinks()}</div>
+			<div>{renderLangSwitcher()}</div>
+		</header>
+	);
 };
 
 export default Header;

@@ -7,7 +7,8 @@ const childrenPropTypes = {
 const routePropTypes = {
 	history: PropTypes.object,
 	match: PropTypes.object,
-	location: PropTypes.object
+	location: PropTypes.object,
+	route: PropTypes.string
 };
 
 const routeObjectPropTypes = {

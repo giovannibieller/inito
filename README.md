@@ -40,9 +40,13 @@ Init React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel,
 -   `npm start`
 -   app will run at `http://localhost:3000`
 
+### VERSION
+
+-   `npm run version`
+-   it will ask you the level of version to update (1.0.0) from 1 to 3
+-   update `package.json` and `package-lock.json` version
+
 ### PROD
 
 -   `npm run build`
--   it will ask you the level of version to update (1.0.0) from 1 to 3
--   update `package.json` and `package-lock.json` version
--   creates project build in /dist
+-   it will create a project build in /dist

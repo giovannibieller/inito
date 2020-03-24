@@ -14,7 +14,7 @@ import urls from './routes.urls';
 
 const routes = [
 	{
-		name: 'Dashboard',
+		name: 'dashboard',
 		Component: Dashboard,
 		Layout: Layout,
 		path: urls.Dashboard,
@@ -22,7 +22,7 @@ const routes = [
 		isInMenu: true
 	},
 	{
-		name: 'Login',
+		name: 'login',
 		Component: Login,
 		Layout: Layout,
 		path: urls.Login,
@@ -30,7 +30,7 @@ const routes = [
 		isInMenu: false
 	},
 	{
-		name: 'About',
+		name: 'about',
 		Component: About,
 		Layout: Layout,
 		path: urls.About,

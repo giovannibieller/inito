@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 import routes from './routes.config';
 
+const Loader = <div>Loading...</div>;
+
 const childRoutes = () => {
 	return routes.map((r, i) => {
 		const { name, path, Layout, Component, RouteComponent } = r;
@@ -14,8 +16,8 @@ const childRoutes = () => {
 				render={props => {
 					return (
 						<Layout {...props}>
-							<Suspense fallback={<div>Loading...</div>}>
-								<Component {...props} />
+							<Suspense fallback={Loader}>
+								<Component route={name} {...props} />
 							</Suspense>
 						</Layout>
 					);
