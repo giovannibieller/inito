@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -6,9 +7,10 @@ import routes from '@routes/routes.config.js';
 import Languages from '@lang/languages.js';
 import Styles from './Header.styles.js';
 
-const Header = () => {
+const Header = props => {
 	const { t, i18n } = useTranslation();
 	const { classes } = Styles;
+	const { noLang } = props;
 
 	const renderLinks = () => {
 		return routes
@@ -58,9 +60,13 @@ const Header = () => {
 	return (
 		<header className={classes.container}>
 			<div>{renderLinks()}</div>
-			<div>{renderLangSwitcher()}</div>
+			{!noLang && <div>{renderLangSwitcher()}</div>}
 		</header>
 	);
+};
+
+Header.propTypes = {
+	noLang: PropTypes.bool
 };
 
 export default Header;

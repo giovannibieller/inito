@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Layout from '@layouts/Layout';
+import LayoutNoLang from '@layouts/LayoutNoLang';
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
@@ -24,7 +25,7 @@ const routes = [
 	{
 		name: 'login',
 		Component: Login,
-		Layout: Layout,
+		Layout: LayoutNoLang,
 		path: urls.Login,
 		RouteComponent: PublicRoute,
 		isInMenu: false
