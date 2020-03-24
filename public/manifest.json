@@ -1,0 +1,25 @@
+{
+	"short_name": "inito",
+	"name": "Inito PWA",
+	"icons": [
+		{
+			"src": "./ico/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "./ico/android-chrome-256x256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "./ico/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/?utm_source=homescreen",
+	"background_color": "#2E86C1",
+	"theme_color": "#2E86C1",
+	"display": "standalone"
+}

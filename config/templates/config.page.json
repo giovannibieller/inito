@@ -1,0 +1,6 @@
+{
+	"type": "page",
+	"templatesDirPath": "./config/templates",
+	"templateName": "page",
+	"path": "./src/pages"
+}

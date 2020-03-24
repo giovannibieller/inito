@@ -1,0 +1,6 @@
+{
+	"type": "component",
+	"templatesDirPath": "./config/templates",
+	"templateName": "component",
+	"path": "./src/components"
+}
