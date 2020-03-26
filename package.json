@@ -1,10 +1,9 @@
 {
 	"name": "inito",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Init React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel, react-router 4 with code splitting",
 	"main": "index.js",
 	"scripts": {
-		"inito": "npm install --save-dev npm && node ./scripts/inito.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"version": "node ./scripts/version.js",
 		"build": "NODE_ENV=production webpack -p",
@@ -16,7 +15,7 @@
 		"generate:component": "node_modules/create-component-app/dist/index.js --template component --config ./config/templates/config.component.json",
 		"generate:page": "node_modules/create-component-app/dist/index.js --template page --config ./config/templates/config.page.json"
 	},
-	"author": "",
+	"author": "Giovanni Bieller",
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.8.7",
@@ -66,5 +65,9 @@
 		"templatesDirPath": "./config/templates",
 		"templateName": "component",
 		"path": "./src/components"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/giovannibieller/inito.git"
 	}
 }

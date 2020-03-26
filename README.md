@@ -6,14 +6,11 @@ Init React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel,
 
 -   clone repository: `git clone <repository_url>`
 -   `cd path/to/app`
--   `npm run inito`
--   it will:
-    -   install `npm` locally
-    -   run `npm install`
-    -   ask for the new project name
-    -   update `package.json` and `package-lock.json` name
-    -   remove git init
-    -   init new git project
+-   run `npm install`
+
+### GENERATE NEW PROJECT
+
+-   use [CREATE INITO TOOL](https://github.com/giovannibieller/create-inito)
 
 ### CREATE NEW COMPONENT
 
@@ -35,7 +32,7 @@ Init React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel,
 
 ### DEV
 
--   cd path/to/app
+-   `cd path/to/app`
 -   `npm run build` - first time and when there are changes in /public
 -   `npm start`
 -   app will run at `http://localhost:3000`
