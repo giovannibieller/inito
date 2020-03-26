@@ -2,12 +2,6 @@
 
 Init React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel, react-router 4 with code splitting
 
-### INSTALL
-
--   clone repository: `git clone <repository_url>`
--   `cd path/to/app`
--   run `npm install`
-
 ### GENERATE NEW PROJECT
 
 -   use [CREATE INITO TOOL](https://github.com/giovannibieller/create-inito)
@@ -30,20 +24,22 @@ Init React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel,
     -   PAGE_NAME.js
     -   PAGE_NAME.styles.js
 
-### DEV
-
--   `cd path/to/app`
--   `npm run build` - first time and when there are changes in /public
--   `npm start`
--   app will run at `http://localhost:3000`
-
-### VERSION
+### UPDATE VERSION
 
 -   `npm run version`
 -   it will ask you the level of version to update (1.0.0) from 1 to 3
 -   update `package.json` and `package-lock.json` version
 
-### PROD
+### BUILD APP
 
 -   `npm run build`
 -   it will create a project build in /dist
+
+### DEV INSTALL
+
+-   clone repository: `git clone <repository_url>`
+-   `cd path/to/app`
+-   run `npm install`
+-   `npm run build` - first time and when there are changes in /public
+-   `npm start`
+-   app will run at `http://localhost:3000`
