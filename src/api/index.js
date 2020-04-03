@@ -1,7 +1,7 @@
 import login from './services/login';
 
 const Api = {
-	login: login
+  login: login
 };
 
 export default Api;

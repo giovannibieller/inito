@@ -5,8 +5,8 @@ const initJSS = () => jss.setup(preset());
 const createJSS = styles => jss.createStyleSheet(styles).attach();
 
 const saveToken = accessToken => {
-	console.log('accessToken', accessToken);
-	localStorage.setItem('accessToken', accessToken);
+  console.log('accessToken', accessToken);
+  localStorage.setItem('accessToken', accessToken);
 };
 
 export { initJSS, createJSS, saveToken };

@@ -14,37 +14,37 @@ const Page404 = React.lazy(() => import('../pages/Page404/Page404'));
 import urls from './routes.urls';
 
 const routes = [
-	{
-		name: 'dashboard',
-		Component: Dashboard,
-		Layout: Layout,
-		path: urls.Dashboard,
-		RouteComponent: PrivateRoute,
-		isInMenu: true
-	},
-	{
-		name: 'login',
-		Component: Login,
-		Layout: LayoutNoLang,
-		path: urls.Login,
-		RouteComponent: PublicRoute,
-		isInMenu: false
-	},
-	{
-		name: 'about',
-		Component: About,
-		Layout: Layout,
-		path: urls.About,
-		RouteComponent: PrivateRoute,
-		isInMenu: true
-	},
-	{
-		name: '404',
-		Component: Page404,
-		Layout: Layout,
-		RouteComponent: PublicRoute,
-		isInMenu: false
-	}
+  {
+    name: 'dashboard',
+    Component: Dashboard,
+    Layout: Layout,
+    path: urls.Dashboard,
+    RouteComponent: PrivateRoute,
+    isInMenu: true
+  },
+  {
+    name: 'login',
+    Component: Login,
+    Layout: LayoutNoLang,
+    path: urls.Login,
+    RouteComponent: PublicRoute,
+    isInMenu: false
+  },
+  {
+    name: 'about',
+    Component: About,
+    Layout: Layout,
+    path: urls.About,
+    RouteComponent: PrivateRoute,
+    isInMenu: true
+  },
+  {
+    name: '404',
+    Component: Page404,
+    Layout: Layout,
+    RouteComponent: PublicRoute,
+    isInMenu: false
+  }
 ];
 
 export default routes;

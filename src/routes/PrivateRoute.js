@@ -5,10 +5,10 @@ import { routeObjectPropTypes } from '@utils/proptypes';
 import urls from './routes.urls';
 
 const PrivateRoute = props => {
-	const { accessToken } = localStorage;
-	if (!accessToken) return <Redirect to={urls.Login} />;
+  const { accessToken } = localStorage;
+  if (!accessToken) return <Redirect to={urls.Login} />;
 
-	return <Route {...props} />;
+  return <Route {...props} />;
 };
 
 PrivateRoute.propTypes = routeObjectPropTypes;
