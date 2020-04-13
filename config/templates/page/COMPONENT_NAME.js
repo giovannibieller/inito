@@ -1,10 +1,10 @@
 import React from 'react';
 import { routePropTypes } from '@utils/proptypes';
 
-import Styles from './COMPONENT_NAME.styles';
+import useStyles from './COMPONENT_NAME.styles';
 
 const COMPONENT_NAME = () => {
-	const { classes } = Styles;
+	const classes = useStyles();
 
 	return <div className={classes.container}>Page component</div>;
 };

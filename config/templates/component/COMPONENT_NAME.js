@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Styles from './COMPONENT_NAME.styles';
+import useStyles from './COMPONENT_NAME.styles';
 
 const COMPONENT_NAME = props => {
-	const { classes } = Styles;
+  const classes = useStyles();
 
-	return <div className={classes.container}>new component</div>;
+  return <div className={classes.container}>new component</div>;
 };
 
 COMPONENT_NAME.propTypes = {};

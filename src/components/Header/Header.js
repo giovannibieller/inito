@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 
 import routes from '@routes/routes.config.js';
 import Languages from '@lang/languages.js';
-import Styles from './Header.styles.js';
+import useStyles from './Header.styles.js';
 
 const Header = props => {
   const { t, i18n } = useTranslation();
-  const { classes } = Styles;
+  const classes = useStyles();
   const { noLang } = props;
 
   const renderLinks = () => {

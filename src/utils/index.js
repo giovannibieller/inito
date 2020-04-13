@@ -1,12 +1,10 @@
-import jss from 'jss';
-import preset from 'jss-preset-default';
+import { createUseStyles } from 'react-jss';
 
-const initJSS = () => jss.setup(preset());
-const createJSS = styles => jss.createStyleSheet(styles).attach();
+const createJSS = styles => createUseStyles(styles);
 
 const saveToken = accessToken => {
   console.log('accessToken', accessToken);
   localStorage.setItem('accessToken', accessToken);
 };
 
-export { initJSS, createJSS, saveToken };
+export { createJSS, saveToken };
