@@ -4,6 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const { I18NextHMRPlugin } = require('i18next-hmr/plugin');
+const { choosePort } = require('react-dev-utils/WebpackDevServerUtils');
+const openBrowser = require('react-dev-utils/openBrowser');
+
+const host = 'localhost';
+const desiredPort = 8080;
 
 const app = {
   disturl: path.resolve(__dirname, 'dist'),
@@ -117,7 +122,12 @@ const optimizations = {
   }
 };
 
-module.exports = (env, argv) => {
+const createConfig = async (env, argv) => {
+  const port = await choosePort(host, desiredPort);
+  if (!port) {
+    process.exit();
+  }
+
   return {
     mode: argv.mode,
     entry: {
@@ -132,7 +142,12 @@ module.exports = (env, argv) => {
       // static: app.disturl,
       static: app.publicurl,
       hot: true,
-      historyApiFallback: true
+      historyApiFallback: true,
+      onListening: () => {
+        openBrowser(`http://${host}:${port}`);
+      },
+      port: port,
+      host: host
     },
     module: modules,
     plugins: getPlugins(argv.mode),
@@ -141,3 +156,5 @@ module.exports = (env, argv) => {
     performance: { hints: false }
   };
 };
+
+module.exports = createConfig;

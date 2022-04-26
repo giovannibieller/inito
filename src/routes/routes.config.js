@@ -16,6 +16,7 @@ import urls from './routes.urls';
 const routes = [
   {
     name: 'dashboard',
+    description: 'dashboard description',
     Component: Dashboard,
     Layout: Layout,
     path: urls.Dashboard,
@@ -24,6 +25,7 @@ const routes = [
   },
   {
     name: 'login',
+    description: 'login description',
     Component: Login,
     Layout: LayoutNoLang,
     path: urls.Login,
@@ -32,6 +34,7 @@ const routes = [
   },
   {
     name: 'about',
+    description: 'about description',
     Component: About,
     Layout: Layout,
     path: urls.About,
@@ -40,6 +43,7 @@ const routes = [
   },
   {
     name: '404',
+    description: '404 description',
     Component: Page404,
     Layout: Layout,
     AuthComponent: PublicRoute,
