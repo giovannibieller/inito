@@ -14,7 +14,10 @@ const Styles = {
     color: Colors.accent,
     'text-decoration': 'none',
     'margin-right': '10px',
-    display: 'inline-block'
+    display: 'inline-block',
+    '&.active': {
+      textDecoration: 'underline'
+    }
   },
   linkActive: {
     'text-decoration': 'underline'

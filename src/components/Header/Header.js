@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import routes from '@routes/routes.config.js';
@@ -17,17 +17,9 @@ const Header = props => {
       .filter(el => el.isInMenu)
       .map(route => {
         return (
-          <Link
-            key={route.name}
-            to={route.path}
-            exact={true}
-            activeStyle={{
-              textDecoration: 'underline'
-            }}
-            className={classes.link}
-          >
+          <NavLink key={route.name} to={route.path} className={classes.link}>
             {t(route.name)}
-          </Link>
+          </NavLink>
         );
       });
   };
