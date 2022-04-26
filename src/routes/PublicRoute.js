@@ -1,9 +1,6 @@
 import { routeObjectPropTypes } from '@utils/proptypes';
 
-const PublicRoute = ({ children }) => {
-  console.log('children', children);
-  return children;
-};
+const PublicRoute = ({ children }) => children;
 
 PublicRoute.propTypes = routeObjectPropTypes;
 

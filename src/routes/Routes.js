@@ -30,7 +30,6 @@ const childRoutes = () => {
 };
 
 const AppRoutes = () => {
-  console.log('iin routes');
   return (
     <Router>
       {/* <Switch>{childRoutes()}</Switch> */}

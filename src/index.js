@@ -14,8 +14,6 @@ import App from '@app/App';
 const container = document.getElementById('app');
 const root = createRoot(container);
 
-console.log('RouteComponent', 'in');
-
 root.render(
   <JssProvider jss={jss}>
     <App />
