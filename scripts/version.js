@@ -8,42 +8,46 @@ const fileLock = require(fileNameLock);
 const readline = require('readline');
 
 const rl = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout
+  input: process.stdin,
+  output: process.stdout
 });
 
 const close = () => {
-	process.exit(0);
+  process.exit(0);
 };
 
-rl.question("\n💫 What's the level of version? (1|2|3) ", function(level) {
-	if (level !== '1' && level !== '2' && level !== '3') {
-		console.log(`\n❌ ERROR: ACCEPTED VALUES ARE 1, 2, 3!\n`);
-		close();
-	}
+console.log(`\n💫 CURRENT VERSION IS [${file.version}]!\n`);
 
-	const levelArray = file.version.split('.');
-	levelArray[level - 1] = parseInt(levelArray[level - 1], 10) + 1;
+rl.question("\n❓ What's the level of version you want to upgrade? (1|2|3) (es: 2.3.1) ", function(
+  level
+) {
+  if (level !== '1' && level !== '2' && level !== '3') {
+    console.log(`\n❌ ERROR: ACCEPTED VALUES ARE 1, 2, 3!\n`);
+    close();
+  }
 
-	file.version = levelArray.join('.');
-	fileLock.version = levelArray.join('.');
+  const prevVersion = file.versio;
+  const levelArray = file.version.split('.');
+  levelArray[level - 1] = parseInt(levelArray[level - 1], 10) + 1;
 
-	const data = JSON.stringify(file);
-	const dataLock = JSON.stringify(fileLock);
+  file.version = levelArray.join('.');
+  fileLock.version = levelArray.join('.');
 
-	fs.writeFile('package.json', data, err => {
-		if (err) throw err;
-		console.log(`\n🤟 VERSION UPDATED TO [${file.version}]!\n`);
+  const data = JSON.stringify(file);
+  const dataLock = JSON.stringify(fileLock);
 
-		fs.writeFile('package-lock.json', dataLock, err => {
-			if (err) throw err;
-			console.log(`🤟 PACKAGE-LOCK.JSON VERSION UPDATED TO [${file.version}]!\n`);
+  fs.writeFile('package.json', data, err => {
+    if (err) throw err;
 
-			close();
-		});
-	});
+    fs.writeFile('package-lock.json', dataLock, err => {
+      if (err) throw err;
+      console.log(`\n🤟 VERSION UPDATED TO [${file.version}]!\n`);
+
+      close();
+    });
+  });
 });
 
 rl.on('close', function() {
-	close();
+  close();
 });

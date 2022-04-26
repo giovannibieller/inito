@@ -1,4 +1,3 @@
-import Colors from './colors';
 import Fonts from './fonts';
 
 const Styles = {
@@ -9,9 +8,9 @@ const Styles = {
       'box-sizing': 'border-box'
     },
     body: {
-      background: Colors.accent,
       margin: 0,
-      'font-family': Fonts.main['@font-face'].fontFamily
+      padding: 0,
+      fontFamily: Fonts.main['@font-face'].fontFamily
     },
     a: {
       textDecoration: 'none'

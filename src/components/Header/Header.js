@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import routes from '@routes/routes.config.js';
@@ -17,7 +17,7 @@ const Header = props => {
       .filter(el => el.isInMenu)
       .map(route => {
         return (
-          <NavLink
+          <Link
             key={route.name}
             to={route.path}
             exact={true}
@@ -27,7 +27,7 @@ const Header = props => {
             className={classes.link}
           >
             {t(route.name)}
-          </NavLink>
+          </Link>
         );
       });
   };

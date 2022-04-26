@@ -1,36 +1,41 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import routes from './routes.config';
 
 const Loader = <div>Loading...</div>;
 
 const childRoutes = () => {
-  return routes.map((r, i) => {
-    const { name, path, Layout, Component, RouteComponent } = r;
+  return routes.map(r => {
+    const { name, path, Layout, Component, AuthComponent } = r;
+    console.log('name', name);
     return (
-      <RouteComponent
-        key={`${name}_${i}`}
+      <Route
+        key={`${name}`}
         path={path || null}
         exact={typeof path !== 'undefined'}
-        render={props => {
-          return (
-            <Layout {...props}>
+        element={
+          <AuthComponent>
+            <Layout>
               <Suspense fallback={Loader}>
-                <Component route={name} {...props} />
+                <Component route={name} />
               </Suspense>
             </Layout>
-          );
-        }}
-      />
+          </AuthComponent>
+        }
+      ></Route>
     );
   });
 };
 
-const Routes = () => (
-  <Router>
-    <Switch>{childRoutes()}</Switch>
-  </Router>
-);
+const AppRoutes = () => {
+  console.log('iin routes');
+  return (
+    <Router>
+      {/* <Switch>{childRoutes()}</Switch> */}
+      <Routes>{childRoutes()}</Routes>
+    </Router>
+  );
+};
 
-export default Routes;
+export default AppRoutes;

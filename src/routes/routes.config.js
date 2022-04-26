@@ -19,7 +19,7 @@ const routes = [
     Component: Dashboard,
     Layout: Layout,
     path: urls.Dashboard,
-    RouteComponent: PrivateRoute,
+    AuthComponent: PrivateRoute,
     isInMenu: true
   },
   {
@@ -27,7 +27,7 @@ const routes = [
     Component: Login,
     Layout: LayoutNoLang,
     path: urls.Login,
-    RouteComponent: PublicRoute,
+    AuthComponent: PublicRoute,
     isInMenu: false
   },
   {
@@ -35,14 +35,14 @@ const routes = [
     Component: About,
     Layout: Layout,
     path: urls.About,
-    RouteComponent: PrivateRoute,
+    AuthComponent: PrivateRoute,
     isInMenu: true
   },
   {
     name: '404',
     Component: Page404,
     Layout: Layout,
-    RouteComponent: PublicRoute,
+    AuthComponent: PublicRoute,
     isInMenu: false
   }
 ];

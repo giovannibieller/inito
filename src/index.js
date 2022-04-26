@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { create } from 'jss';
 import { JssProvider } from 'react-jss';
@@ -11,9 +11,13 @@ jss.use(globalPlugin(), camelCase());
 
 import App from '@app/App';
 
-ReactDOM.render(
+const container = document.getElementById('app');
+const root = createRoot(container);
+
+console.log('RouteComponent', 'in');
+
+root.render(
   <JssProvider jss={jss}>
     <App />
-  </JssProvider>,
-  document.getElementById('app')
+  </JssProvider>
 );
