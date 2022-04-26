@@ -3,10 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const { I18NextHMRPlugin } = require('i18next-hmr/plugin');
 
 const app = {
   disturl: path.resolve(__dirname, 'dist'),
   publicurl: path.resolve(__dirname, 'public'),
+  localesurl: path.resolve(__dirname, 'public/assets/i18n/translations'),
   templateurl: path.join(__dirname, 'public/', 'index.html')
 };
 
@@ -64,7 +66,14 @@ const getPlugins = m => {
       })
     ];
   } else {
-    plugins = [new webpack.HotModuleReplacementPlugin()];
+    plugins = [
+      new HtmlWebpackPlugin({
+        template: app.templateurl
+      }),
+      new I18NextHMRPlugin({
+        localesDir: app.localesurl
+      })
+    ];
   }
   return plugins;
 };
@@ -120,13 +129,15 @@ module.exports = (env, argv) => {
       clean: true
     },
     devServer: {
-      static: app.disturl,
+      // static: app.disturl,
+      static: app.publicurl,
       hot: true,
       historyApiFallback: true
     },
     module: modules,
     plugins: getPlugins(argv.mode),
     resolve: aliases,
-    optimization: optimizations
+    optimization: optimizations,
+    performance: { hints: false }
   };
 };

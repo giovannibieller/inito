@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import Backend from 'i18next-xhr-backend';
 import { initReactI18next } from 'react-i18next';
+import { applyClientHMR } from 'i18next-hmr/client';
 
 import Languages from './languages';
 
@@ -30,5 +31,7 @@ i18n
       useSuspense: false
     }
   });
+
+applyClientHMR(i18n);
 
 export default i18n;

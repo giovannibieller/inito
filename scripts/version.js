@@ -18,7 +18,7 @@ const close = () => {
 
 console.log(`\n💫 CURRENT VERSION IS [${file.version}]!\n`);
 
-rl.question("\n❓ What's the level of version you want to upgrade? (1|2|3) (es: 2.3.1) ", function(
+rl.question("\n❓ What's the level of version you want to upgrade? (1|2|3) (es: 1.2.3) ", function(
   level
 ) {
   if (level !== '1' && level !== '2' && level !== '3') {
@@ -26,9 +26,10 @@ rl.question("\n❓ What's the level of version you want to upgrade? (1|2|3) (es:
     close();
   }
 
-  const prevVersion = file.versio;
   const levelArray = file.version.split('.');
   levelArray[level - 1] = parseInt(levelArray[level - 1], 10) + 1;
+  if (levelArray[level]) levelArray[level] = 0;
+  if (levelArray[level] && levelArray[level + 1]) levelArray[level + 1] = 0;
 
   file.version = levelArray.join('.');
   fileLock.version = levelArray.join('.');
