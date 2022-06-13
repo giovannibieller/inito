@@ -18,7 +18,7 @@ React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel, reac
 - webpack + webpack-dev-server
 - enabled [code splitting](https://reactjs.org/docs/code-splitting.html) with React.lazy and Suspense
 - components generation with [create-component-app](https://www.npmjs.com/package/create-component-app)
-- built in HttpClient with [wretch](https://www.npmjs.com/package/wretch)
+- built in HttpClient with [axios](https://axios-http.com/)
 
 ### CREATE NEW COMPONENT
 

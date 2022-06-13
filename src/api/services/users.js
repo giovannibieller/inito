@@ -1,14 +1,9 @@
 import EndPoints from '../endpoints';
 import client from '../client/client';
 
-async function post(username, password) {
-  const body = {
-    username: username,
-    password: password
-  };
-
+async function get() {
   try {
-    const res = await client.post(EndPoints.LOGIN, body);
+    const res = await client.get(EndPoints.USERS);
 
     if (res && res.status === 200) {
       return {
@@ -24,4 +19,4 @@ async function post(username, password) {
   }
 }
 
-export default { post };
+export default { get };
