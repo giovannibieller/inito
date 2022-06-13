@@ -11,7 +11,7 @@ const useApi = (service = () => {}, params = null, options = { loadingOnRefetch:
     if (loadingOnRefetch) handleLoading(true);
     const res = await service(params);
 
-    if (res.status === 'OK') {
+    if (res.status !== 'KO') {
       handleData(res.data);
     } else {
       handleError(res.error);

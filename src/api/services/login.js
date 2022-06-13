@@ -9,13 +9,7 @@ async function post(username, password) {
 
   try {
     const res = await client.post(EndPoints.LOGIN, body);
-
-    if (res && res.status === 200) {
-      return {
-        status: 'OK',
-        data: res.data
-      };
-    }
+    return res;
   } catch (error) {
     return {
       status: 'KO',

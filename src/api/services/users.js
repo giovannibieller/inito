@@ -4,13 +4,7 @@ import client from '../client/client';
 async function get() {
   try {
     const res = await client.get(EndPoints.USERS);
-
-    if (res && res.status === 200) {
-      return {
-        status: 'OK',
-        data: res.data
-      };
-    }
+    return res;
   } catch (error) {
     return {
       status: 'KO',
