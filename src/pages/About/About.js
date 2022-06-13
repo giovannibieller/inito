@@ -1,11 +1,11 @@
 import React from 'react';
+
 import { routePropTypes } from '@utils/proptypes';
-import { useTranslation } from 'react-i18next';
+
+import PageContainer from '@components/PageContainer/PageContainer';
 
 const About = props => {
-  const { t } = useTranslation();
-  const { route } = props;
-  return <div>{t(route)}</div>;
+  return <PageContainer {...props}>About</PageContainer>;
 };
 
 About.propTypes = routePropTypes;

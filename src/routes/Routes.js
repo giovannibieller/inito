@@ -1,36 +1,41 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Head from '@components/Head/Head';
 
 import routes from './routes.config';
 
 const Loader = <div>Loading...</div>;
 
 const childRoutes = () => {
-  return routes.map((r, i) => {
-    const { name, path, Layout, Component, RouteComponent } = r;
+  return routes.map(r => {
+    const { name, description, path, Layout, Component, AuthComponent } = r;
     return (
-      <RouteComponent
-        key={`${name}_${i}`}
+      <Route
+        key={`${name}`}
         path={path || null}
         exact={typeof path !== 'undefined'}
-        render={props => {
-          return (
-            <Layout {...props}>
+        element={
+          <AuthComponent>
+            <Head title={name.toUpperCase()} description={description || ''} />
+            <Layout>
               <Suspense fallback={Loader}>
-                <Component route={name} {...props} />
+                <Component route={name} />
               </Suspense>
             </Layout>
-          );
-        }}
-      />
+          </AuthComponent>
+        }
+      ></Route>
     );
   });
 };
 
-const Routes = () => (
-  <Router>
-    <Switch>{childRoutes()}</Switch>
-  </Router>
-);
+const AppRoutes = () => {
+  return (
+    <Router>
+      {/* <Switch>{childRoutes()}</Switch> */}
+      <Routes>{childRoutes()}</Routes>
+    </Router>
+  );
+};
 
-export default Routes;
+export default AppRoutes;

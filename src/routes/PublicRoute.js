@@ -1,10 +1,6 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
 import { routeObjectPropTypes } from '@utils/proptypes';
 
-const PublicRoute = props => {
-  return <Route {...props} />;
-};
+const PublicRoute = ({ children }) => children;
 
 PublicRoute.propTypes = routeObjectPropTypes;
 

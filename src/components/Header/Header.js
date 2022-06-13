@@ -17,15 +17,7 @@ const Header = props => {
       .filter(el => el.isInMenu)
       .map(route => {
         return (
-          <NavLink
-            key={route.name}
-            to={route.path}
-            exact={true}
-            activeStyle={{
-              textDecoration: 'underline'
-            }}
-            className={classes.link}
-          >
+          <NavLink key={route.name} to={route.path} className={classes.link}>
             {t(route.name)}
           </NavLink>
         );

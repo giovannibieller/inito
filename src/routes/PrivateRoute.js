@@ -1,14 +1,12 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { routeObjectPropTypes } from '@utils/proptypes';
 
 import urls from './routes.urls';
 
-const PrivateRoute = props => {
+const PrivateRoute = ({ children }) => {
   const { accessToken } = localStorage;
-  if (!accessToken) return <Redirect to={urls.Login} />;
-
-  return <Route {...props} />;
+  return accessToken ? children : <Navigate to={urls.Login} />;
 };
 
 PrivateRoute.propTypes = routeObjectPropTypes;

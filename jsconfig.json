@@ -1,5 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src"
+    "baseUrl": ".",
+    "module": "commonjs",
+    "paths": {
+      "@app/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@layout/*": ["./src/layout/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@api/*": ["./src/api/*"],
+      "@context/*": ["./src/context/*"],
+      "@websocket/*": ["./src/websocket/*"],
+      "@events/*": ["./src/events/*"]
+    }
   }
 }
