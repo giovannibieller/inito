@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background: var(--color-grey);
+}
+
+.link {
+  color: var(--color-accent);
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-block;
+}
+.linkActive {
+  text-decoration: underline;
+}

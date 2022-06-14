@@ -1,7 +1,7 @@
 {
   "name": "inito",
   "version": "2.2.2",
-  "description": "Init React app with: webpack 5, wepback-dev-server, eslint, jss, proptypes, babel, react 18, react-router 6 with code splitting",
+  "description": "Init React app with: webpack 5, wepback-dev-server, eslint, CSS Modules, proptypes, babel, react 18, react-router 6 with code splitting",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.5",
+    "@babel/eslint-parser": "^7.18.2",
     "@babel/plugin-proposal-decorators": "^7.18.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.0",
     "@babel/preset-env": "^7.18.2",
@@ -55,15 +56,10 @@
     "create-component-app": "^1.7.0",
     "i18next": "^19.9.2",
     "i18next-xhr-backend": "^3.2.2",
-    "jss": "^10.9.0",
-    "jss-global": "^3.0.0",
-    "jss-plugin-camel-case": "^10.9.0",
-    "jss-plugin-nested": "^10.9.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.17.1",
-    "react-jss": "^10.9.0",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0"
   },

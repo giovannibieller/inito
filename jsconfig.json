@@ -4,12 +4,14 @@
     "module": "commonjs",
     "paths": {
       "@app/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@layout/*": ["./src/layout/*"],
       "@pages/*": ["./src/pages/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@utils/*": ["./src/utils/*"],
+      "@components/*": ["./src/components/*"],
       "@api/*": ["./src/api/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@lang/*": ["./src/lang/*"],
       "@context/*": ["./src/context/*"],
       "@websocket/*": ["./src/websocket/*"],
       "@events/*": ["./src/events/*"]

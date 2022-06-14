@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import useStyles from './PageContainer.styles';
+import * as classes from './PageContainer.module.css';
 
 const PageContainer = props => {
-  const classes = useStyles();
-
   return <div className={classes.container}>{props.children}</div>;
 };
 

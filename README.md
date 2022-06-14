@@ -1,6 +1,6 @@
 # INITO
 
-React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel, react-router 4 with code splitting
+React app with: webpack, wepback-dev-server, eslint, CSS Modules, proptypes, babel, react-router 4 with code splitting
 
 ### GENERATE NEW PROJECT
 
@@ -11,7 +11,7 @@ React app with: webpack, wepback-dev-server, eslint, jss, proptypes, babel, reac
 - react
 - react-router
 - i18next + react-i18next
-- jss || css-loader
+- CSS Modules
 - proptypes
 - eslint
 - babel
