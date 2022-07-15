@@ -6,7 +6,7 @@ import urls from './routes.urls';
 
 const PrivateRoute = ({ children }) => {
   const { accessToken } = localStorage;
-  return accessToken ? children : <Navigate to={urls.Login} />;
+  return accessToken ? children : <Navigate to={urls.login} />;
 };
 
 PrivateRoute.propTypes = routeObjectPropTypes;

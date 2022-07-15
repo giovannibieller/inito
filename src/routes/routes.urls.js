@@ -1,7 +1,8 @@
 const urls = {
-  Dashboard: '/',
-  About: '/about',
-  Login: '/login'
+  login: '/login',
+  authRoutes: '/*',
+  dashboard: '/',
+  about: '/about'
 };
 
 export default urls;

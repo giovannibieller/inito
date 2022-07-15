@@ -1,16 +1,17 @@
 import React from 'react';
-
 import { routePropTypes } from '@utils/proptypes';
+import { INITO_DESCRIPTION } from '@utils/helpers';
 
-import PageContainer from '@components/PageContainer/PageContainer';
+import Head from '@components/Head/Head';
 import TestApiCall from '@components/TestApiCall/TestApiCall';
 
-const Dashboard = props => {
+const Dashboard = () => {
   return (
-    <PageContainer {...props}>
+    <div>
+      <Head title="DASHBOARD" description={INITO_DESCRIPTION} />
       Dashboard
       <TestApiCall />
-    </PageContainer>
+    </div>
   );
 };
 

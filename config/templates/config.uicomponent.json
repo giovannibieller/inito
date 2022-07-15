@@ -1,0 +1,6 @@
+{
+  "type": "uicomponent",
+  "templatesDirPath": "./config/templates",
+  "templateName": "uicomponent",
+  "path": "./src/components/ui"
+}

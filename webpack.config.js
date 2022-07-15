@@ -145,7 +145,8 @@ const createConfig = async (env, argv) => {
     output: {
       filename: '[name].bundle.js',
       path: app.disturl,
-      clean: true
+      clean: true,
+      publicPath: app.publicPath
     },
     devServer: {
       // static: app.disturl,

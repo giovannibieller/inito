@@ -1,11 +1,16 @@
 import React from 'react';
-
 import { routePropTypes } from '@utils/proptypes';
+import { INITO_DESCRIPTION } from '@utils/helpers';
 
-import PageContainer from '@components/PageContainer/PageContainer';
+import Head from '@components/Head/Head';
 
-const About = props => {
-  return <PageContainer {...props}>About</PageContainer>;
+const About = () => {
+  return (
+    <div>
+      <Head title="ABOUT" description={INITO_DESCRIPTION} />
+      About
+    </div>
+  );
 };
 
 About.propTypes = routePropTypes;

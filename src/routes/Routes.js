@@ -1,39 +1,30 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Head from '@components/Head/Head';
 
-import routes from './routes.config';
+import Layout from '@layouts/Layout';
 
-const Loader = <div>Loading...</div>;
+import Login from '@pages/Login/Login';
+import Page404 from '@pages/Page404/Page404';
 
-const childRoutes = () => {
-  return routes.map(r => {
-    const { name, description, path, Layout, Component, AuthComponent } = r;
-    return (
-      <Route
-        key={`${name}`}
-        path={path || null}
-        exact={typeof path !== 'undefined'}
-        element={
-          <AuthComponent>
-            <Head title={name.toUpperCase()} description={description || ''} />
-            <Layout>
-              <Suspense fallback={Loader}>
-                <Component route={name} />
-              </Suspense>
-            </Layout>
-          </AuthComponent>
-        }
-      ></Route>
-    );
-  });
-};
+import urls from './routes.urls';
+import AuthRoutes from './AuthRoutes';
 
 const AppRoutes = () => {
   return (
     <Router>
       {/* <Switch>{childRoutes()}</Switch> */}
-      <Routes>{childRoutes()}</Routes>
+      <Routes>
+        <Route path={urls.login} element={<Login />}></Route>
+        <Route path={urls.authRoutes} element={<AuthRoutes />}></Route>
+        <Route
+          path="*"
+          element={
+            <Layout>
+              <Page404 />
+            </Layout>
+          }
+        ></Route>
+      </Routes>
     </Router>
   );
 };
