@@ -7,6 +7,8 @@ const COMPONENT_NAME = props => {
   return <div className={classes.container}>new component</div>;
 };
 
+COMPONENT_NAME.defaultProps = {};
+
 COMPONENT_NAME.propTypes = {};
 
 export default COMPONENT_NAME;

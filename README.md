@@ -62,3 +62,13 @@ React app with: webpack, wepback-dev-server, eslint, CSS Modules, proptypes, bab
 - `npm run build` - first time and when there are changes in /public
 - `npm start`
 - app will run at `http://localhost:3000`
+
+### STYLEGUIDE RUN
+
+- `npm run start:ui`
+- Styleguidist will run at `http://localhost:6060`
+
+### STYLEGUIDE BUILD
+
+- `npm run build:ui`
+- generate Styleguidist build in `/styleguide`
