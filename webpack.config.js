@@ -30,7 +30,13 @@ const modules = {
             modules: true
           }
         }
-      ]
+      ],
+      include: /\.module\.css$/
+    },
+    {
+      test: /\.css$/i,
+      use: ['style-loader', 'css-loader'],
+      exclude: /\.module\.css$/
     },
     {
       test: /\.(png|svg|jpg|gif)$/,
@@ -163,7 +169,8 @@ const createConfig = async (env, argv) => {
     plugins: getPlugins(argv.mode),
     resolve: aliases,
     optimization: optimizations,
-    performance: { hints: false }
+    performance: { hints: false },
+    devtool: 'source-map'
   };
 };
 
